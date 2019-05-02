@@ -1,0 +1,12 @@
+wget https://releases.hashicorp.com/consul/1.4.4/consul_1.4.4_linux_amd64.zip
+apt install unzip
+unzip consul_1.4.4_linux_amd64.zip
+cp consul /usr/bin
+consul --version
+vim /etc/systemd/system/consul.service
+vi /etc/hosts
+sudo systemctl enable consul
+sudo systemctl start consul
+sudo systemctl status consul
+consul members
+consul members -http-addr=192.168.3.127:8500
